@@ -10,26 +10,15 @@ $vmlist=Read-Host "Give the location of VM List File Eg-[D:\vm.txt]"
 $list=get-content $source
 
 2)Filtering the powered ON VMs only
-
 $more_data=get-vm $vm
-
 $power = $more_data | select PowerState -ExpandProperty PowerState
-
 if($power -eq "PoweredOff")
-
 {
-
 ......
-
-
 }
-
 else
-
 {
-
 ......
-
 }
 
 3)Get the capacity of the 1st Hard Disk (C:\) attached to VM
