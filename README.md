@@ -15,21 +15,21 @@ $more_data=get-vm $vm
 
 $power = $more_data | select PowerState -ExpandProperty PowerState
 
-if($power -eq "PoweredOff")
+      if($power -eq "PoweredOff")
 
-{
+      {
 
-......
+       ......
 
-}
+      }
 
-else
+      else
 
-{
+      {
 
-......
+       ......
 
-}
+      }
 
 3)Get the capacity of the 1st Hard Disk (C:\) attached to VM
 
@@ -49,21 +49,21 @@ $FDatastore = Get-VM $vm | Get-datastore | select FreeSpaceGB -ExpandProperty Fr
 
 [int]$check=50+$Wanted
 
-If ($check -lt $FDatastore)
+      If ($check -lt $FDatastore)
 
-{
+      {
 
-Set-HardDisk -HardDisk $HD -capacityGB $ss -confirm:$false
+      Set-HardDisk -HardDisk $HD -capacityGB $ss -confirm:$false
 
-}
+      }
 
-else
+      else
 
-{
+      {
 
-timestamp "<<Error>> Free space on $NDatastore is not enough to increase the disk capacity of $VM_name"
+      timestamp "<<Error>> Free space on $NDatastore is not enough to increase the disk capacity of $VM_name"
   
-}
+      }
 
 7)If all the above process are successful, expand the disk space with in OS
 
